@@ -1,0 +1,110 @@
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: "Inter", sans-serif;
+  margin: 0;
+}
+
+/* HEADER --------------------------------------*/
+.header {
+  display: flex;
+  align-items: center;
+  padding: 15px 30px;
+  background: #000;
+  border-bottom: 2px solid #00ff57;
+}
+
+.logo-img {
+  height: 100px;
+  margin-right: 5px;
+}
+
+.title-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.site-title {
+  color: #00ff57;
+  font-size: 26px;
+  margin: 0;
+}
+
+.slogan {
+  font-size: 13px;
+  margin-top: 3px;
+  opacity: 1.5;
+  font-weight: 600;   
+}
+
+/* MAIN WHITE PANEL ---------------------------*/
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  background: #fff;
+  color: #000;
+  border-radius: 10px;
+  padding: 35px;
+}
+
+/* FORM ---------------------------------------*/
+.row-flex {
+  display: flex;
+  gap: 12px;
+}
+
+input, select, button {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #00ff57;
+  border-radius: 6px;
+  margin-bottom: 18px;
+}
+
+button {
+  background: #00ff57;
+  color: black;
+  font-weight: 700;
+  transition: 0.2s;
+}
+button:hover {
+  background: black;
+  color: #00ff57;
+}
+
+/* DEAL RESULTS -------------------------------*/
+.deal-card {
+  background: white;
+  color: #111;
+  border-left: 4px solid #00ff57;
+  padding: 18px;
+  margin-top: 18px;
+  border-radius: 6px;
+}
+
+.btn {
+  background: #00ff57;
+  color: black;
+  font-weight: 700;
+  padding: 8px 15px;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-right: 8px;
+}
+.btn:hover {
+  background: black;
+  color: #00ff57;
+}
+
+.btn-alt {
+  background: black;
+  color: #00ff57;
+  font-weight: 700;
+  padding: 8px 15px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+.btn-alt:hover {
+  background: #00ff57;
+  color: black;
+}

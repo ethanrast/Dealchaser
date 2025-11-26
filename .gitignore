@@ -1,0 +1,14 @@
+# Ignore build support 
+**/bin/
+**/obj/
+
+# Ignore appsettings containing 
+**/appsettings*.json 
+
+# Node / Vite 
+node_modules
+dist
+dist-ssr
+
+# Logs
+*.log 
