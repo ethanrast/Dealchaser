@@ -3,7 +3,7 @@
 Full-stack web application that generates personalized Black Friday deal ideas using AI.
 
 ## Live Project
-[https://your-azure-url-here](https://dealchaserai-dnh6bsffdmadawcf.germanywestcentral-01.azurewebsites.net/)
+[(https://dealchaserai-dnh6bsffdmadawcf.germanywestcentral-01.azurewebsites.net/]
 
 ## Features
 - Users input preferences (budget, category, etc.)
