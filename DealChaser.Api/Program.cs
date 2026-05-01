@@ -3,7 +3,7 @@ using DealChaser.Api.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Bind OpenAI options from appsettings.json
+// Bind OpenAI options from appsettings.json / appsettings.Development.json
 builder.Services.Configure<OpenAiOptions>(
     builder.Configuration.GetSection("OpenAi"));
 
@@ -11,7 +11,7 @@ builder.Services.Configure<OpenAiOptions>(
 builder.Services.AddHttpClient<OpenAiDealGenerator>();
 builder.Services.AddScoped<IDealGenerator, OpenAiDealGenerator>();
 
-// CORS for your React dev server (for now: allow all)
+// CORS (mainly useful when testing with separate frontend, harmless in prod)
 builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(policy =>
@@ -25,11 +25,14 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
+// app.UseHttpsRedirection();
 app.UseCors();
 
-app.MapGet("/", () => "DealChaser.ai – Black Friday Deal API");
+// Serve React build from wwwroot
+app.UseDefaultFiles();  // looks for index.html by default
+app.UseStaticFiles();
 
-// POST /api/deals
+// 🔹 API endpoint: POST /api/deals
 app.MapPost("/api/deals", async (
     DealRequestDto request,
     IDealGenerator generator,
@@ -43,5 +46,8 @@ app.MapPost("/api/deals", async (
     var ideas = await generator.GenerateDealsAsync(request, ct);
     return Results.Ok(ideas);
 });
+
+// 🔹 Fallback: any unknown route => index.html (React app)
+app.MapFallbackToFile("index.html");
 
 app.Run();

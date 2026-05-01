@@ -2,8 +2,8 @@
 **/bin/
 **/obj/
 
-# Ignore appsettings containing 
-**/appsettings*.json 
+# Ignore ONLY local secrets
+appsettings.Development.json
 
 # Node / Vite 
 node_modules
@@ -12,3 +12,9 @@ dist-ssr
 
 # Logs
 *.log 
+
+# Ignore publish output
+publish/
+
+# Ignore built frontend output
+wwwroot/
